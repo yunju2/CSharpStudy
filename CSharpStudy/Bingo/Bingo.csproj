@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39AE1F19-94B4-4CAC-8275-3D8E454F78F1}</ProjectGuid>
+    <ProjectGuid>{808C3EC5-E66B-47BA-93AA-C5BB866F4903}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_2D_MAP</RootNamespace>
-    <AssemblyName>2D MAP</AssemblyName>
+    <RootNamespace>Bingo</RootNamespace>
+    <AssemblyName>Bingo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="abc.cs" />
     <Compile Include="Program.cs" />
-    <None Include="Class1.cs" />
-    <Compile Include="Program2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

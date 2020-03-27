@@ -6,10 +6,45 @@ using System.Threading.Tasks;
 
 namespace CSharpStudy
 {
+    // struct, class
+    // c++ 객체지향
+    class CalculatorArg
+    {
+        public string sign;
+        // 멤버변수
+        public int number1;
+        public int number2;
+
+        // 최초 생성 시 1회만 호출하는 함수를 만들고 싶다 -> 생성자
+        public CalculatorArg()
+        {
+        }
+
+        // 소멸자 -> 반대
+        ~CalculatorArg()
+        {
+        }
+
+        // 멤버함수, 메소드
+        void func()
+        {
+            //this.number1;
+        }
+
+        // 외부에서 불렀으면 이렇게 불렀을 것
+        //void func(CalculatorArg arg)
+        //{
+        //    arg.number1;
+        //}
+    }
+
     class Caculator
     {
+
+
         void calculate(string sign, int number1, int number2)
         {
+          
             int tmp = 0;
             string result = "";
             switch (sign)
@@ -42,7 +77,7 @@ namespace CSharpStudy
                     break;
                 case "^":
                     {
-                        tmp = inv(number1, number2);
+                        tmp = pow(number1, number2);
                         result = tmp.ToString();
                     }
                     break;
@@ -53,8 +88,13 @@ namespace CSharpStudy
                         result = tmp.ToString();
                     }
                     break;
-
-
+                case "==":
+                    {
+                        bool tmp1;
+                        tmp1 = equal( number1, number2);
+                        result = tmp1.ToString();
+                    }
+                    break;
                 default:
                     result = "잘못된 값;입니다. 다시 입력해주세요";
                     break;
@@ -63,10 +103,10 @@ namespace CSharpStudy
             print(result);
             //return result;
         }
-            void calculate1(string sign,int number1)
-            {
-                int tmp;
-                string result = "";
+        void calculate1(string sign, int number1)
+        {
+            int tmp;
+            string result = "";
             switch (sign)
             {
                 case "root":
@@ -93,7 +133,7 @@ namespace CSharpStudy
                     break;
             }
             print(result);
-            }
+        }
 
         int add(int a, int b)
         {
@@ -115,9 +155,16 @@ namespace CSharpStudy
         {
             return a * b;
         }
-        int inv(int a, int b)
+        int pow(int a, int b)
         {
-            return (int) Math.Pow(a, b);
+            int a_ = 1;
+            for (int i = 0; i < b; ++i)
+            {
+                a_ *= a;
+
+
+            }
+            return a_;
         }
         int shift(int a, int b)
         {
@@ -135,6 +182,10 @@ namespace CSharpStudy
         {
             return --a;
         }
+        bool equal(int a,int b)
+        {
+            return a == b;
+        }
 
         void print(int result)
         {
@@ -148,59 +199,50 @@ namespace CSharpStudy
 
         public void run()
         {
-            
+
 
             while (true)
             {
                 Console.WriteLine("부호를 입력하시요>>");
-                string sign = Console.ReadLine();
+                CalculatorArg arg = new CalculatorArg();
+                arg.sign = Console.ReadLine();
 
-                if (sign.ToLower() == "clear")
+                if (arg.sign.ToLower() == "clear")
                 {
                     Console.Clear();
                     continue;
                 }
-                if (sign.ToLower() == "end")
+                if (arg.sign.ToLower() == "end")
                 {
                     break;
                 }
 
-                    Console.WriteLine("인자값1>>");
-                    string num1 = Console.ReadLine();
-                    int number1;
-                    if (!Int32.TryParse(num1, out number1))
-                    {
-                        Console.WriteLine("오류!! 1번 인자값을 숫자를 입력하세요!");
-                        continue;
-                    }
-                if (sign=="root")
-                {  calculate1(sign, number1);
-                    continue;
-
-                }
-                else if (sign == "++")
+                Console.WriteLine("인자값1>>");
+                string num1 = Console.ReadLine();
+                if (!Int32.TryParse(num1, out arg.number1))
                 {
-                    calculate1(sign, number1);
+                    Console.WriteLine("오류!! 1번 인자값을 숫자를 입력하세요!");
                     continue;
+                }
 
-                }
-                else if (sign == "--")
+                if (arg.sign == "root" || arg.sign == "++" || arg.sign == "--")
                 {
-                    calculate1(sign, number1);
+                    calculate1(arg.sign, arg.number1);
                     continue;
                 }
+
+              
                 Console.WriteLine("인자값2>>");
                 string num2 = Console.ReadLine();
-                int number2;
-                if (!Int32.TryParse(num2, out number2))
+                if (!Int32.TryParse(num2, out arg.number2))
                 {
                     Console.WriteLine("오류!! 2번 인자값을 숫자를 입력하세요!");
                     continue;
                 }
 
-                    
 
-                calculate(sign, number1, number2);
+
+                calculate(arg.sign, arg.number1, arg.number2);
             }
                 
         }
