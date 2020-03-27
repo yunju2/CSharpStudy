@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2D MAP", "2D MAP\2D MAP.csproj", "{39AE1F19-94B4-4CAC-8275-3D8E454F78F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bingo", "Bingo\Bingo.csproj", "{808C3EC5-E66B-47BA-93AA-C5BB866F4903}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{39AE1F19-94B4-4CAC-8275-3D8E454F78F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39AE1F19-94B4-4CAC-8275-3D8E454F78F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39AE1F19-94B4-4CAC-8275-3D8E454F78F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{808C3EC5-E66B-47BA-93AA-C5BB866F4903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{808C3EC5-E66B-47BA-93AA-C5BB866F4903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{808C3EC5-E66B-47BA-93AA-C5BB866F4903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{808C3EC5-E66B-47BA-93AA-C5BB866F4903}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
